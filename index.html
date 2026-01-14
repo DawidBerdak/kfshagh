@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie: Box Model i Box-Sizing</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.5; padding: 20px; background: #f4f4f4; }
+        .container { background: white; padding: 20px; border-radius: 8px; max-width: 800px; margin: auto; }
+        
+
+        .box {
+            width: 200px;
+            padding: 20px;
+            border: 10px solid black;
+            margin-bottom: 20px;
+            background: #3498db;
+            color: white;
+            text-align: center;
+        }
+
+        .c-box { box-sizing: content-box; } 
+        .b-box { box-sizing: border-box; }
+
+        h2 { color: #2c3e50; }
+        .result { background: #eef; padding: 10px; margin: 10px 0; }
+        b { color: #e67e22; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Zadanie: Obliczenia Box Model</h2>
+    
+    <p>Dane wejściowe: <code>width: 200px; padding: 20px; border: 10px;</code></p>
+
+    <div class="result">
+        <strong>a) box-sizing: content-box (Domyślne)</strong><br>
+        Obliczenie: 200px (szerokość) + 40px (padding L+P) + 20px (border L+P) = <b>260px</b><br>
+        <em>Wynik: Rzeczywista szerokość to 260px.</em>
+    </div>
+
+    <div class="result">
+        <strong>b) box-sizing: border-box</strong><br>
+        Obliczenie: Szerokość jest stała i zawiera już padding i border = <b>200px</b><br>
+        <em>Wynik: Rzeczywista szerokość to 200px.</em>
+    </div>
+
+    
+
+    <h2>Kiedy border-box ułatwia pracę?</h2>
+    <ul>
+        <li><b>Layouty procentowe:</b> Dwa elementy po 50% z paddingiem nie rozbijają strony (mieszczą się w 100%).</li>
+        <li><b>Responsywność:</b> Łatwiejsze dopasowanie elementów do szerokości ekranu bez odejmowania pikseli od procentów.</li>
+        <li><b>Przewidywalność:</b> Element ma dokładnie taki rozmiar, jaki wpiszesz w <code>width</code>, niezależnie od grubości ramki.</li>
+    </ul>
+</div>
+
+</body>
+</html>
